@@ -1,6 +1,6 @@
 # Linear Discriminant Analysis on Stream of Features
 
-Python implementation of LDA classifier expanded with **feature incrementation**. When a new feature is added to the model, the internal structure is being updated instead of retraing the model from the beginning. Multicollinearity is handled with regularization using a constant input regularization parameter. An inverse of a total covariance matrix is solved with the Cholesky decomposition.  
+Python implementation of LDA classifier expanded with **feature incrementation**. When a new feature is added to the model, the internal structure is being updated instead of retraing the model from the beginning. Multicollinearity is handled with regularization using a constant input regularization parameter. An inverse of a total covariance matrix is solved with the Cholesky decomposition. The classifier operates in two modes: "offline" means traditional batch processing, when the data comes in bulk, "online" stands for feature incremental learning. 
 ## Example of usage 
 ```python
 dataset = load_iris(True)
