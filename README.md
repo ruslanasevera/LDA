@@ -21,7 +21,7 @@ classifier.predict(X_test)
 * *tests_openml_assert.py* comparing the internal structure of LDA-online to LDA-offline and [LDA-sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html#sklearn.discriminant_analysis.LinearDiscriminantAnalysis)
 * *tests_synt.py* comparing performance of LDA-online to LDA-offline and [LDA-sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html#sklearn.discriminant_analysis.LinearDiscriminantAnalysis) using synthetic data 
 
-**Do not forget** to change [shrunk_covariance](https://scikit-learn.org/stable/modules/generated/sklearn.covariance.shrunk_covariance.html) as bellow to get comparative results. 
+**Do not forget** to change [shrunk_covariance](https://scikit-learn.org/stable/modules/generated/sklearn.covariance.shrunk_covariance.html), which is used by [LDA-sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html#sklearn.discriminant_analysis.LinearDiscriminantAnalysis), as follows to get comparative results. 
 
 ```python
 shrunk_cov.flat[::n_features + 1] += shrinkage 
