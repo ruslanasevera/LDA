@@ -1,6 +1,6 @@
 # Linear Discriminant Analysis on Stream of Features
 
-Python implementation of LDA classifier expanded with **feature incrementation**. When a new feature is added to the model, the internal structure is being updated instead of retraing the model from the beginning. Multicollinearity is handled with regularization using a constant input regularization parameter. An inverse of a total covariance matrix is solved with the Cholesky decomposition. The classifier operates in two modes: "offline" means traditional batch processing, when the data comes in bulk, "online" stands for feature incremental learning. 
+Python implementation of LDA classifier extended by **descriptor/feature increment**. When a new feature is added to the model, the inner structure of the model is being updated instead of retraing the whole model from the beginning. Multicollinearity is handled with regularization using a constant input regularization parameter. An inverse of a total covariance matrix is solved with the Cholesky decomposition, forward and backward substitution. The classifier operates in two modes: "offline" means traditional batch processing, when the data comes in bulk, "online" stands for feature incremental learning. 
 ## Example of usage 
 ```python
 dataset = load_iris(True)
@@ -18,7 +18,7 @@ classifier.predict(X_test)
 
 * *LDAClassifier.py* main file 
 * *tests_openml.py* comparing performance of LDA-online to LDA-offline and [LDA-sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html#sklearn.discriminant_analysis.LinearDiscriminantAnalysis) using different metrics and 30 OpenML datasets
-* *tests_openml_assert.py* comparing the internal structure of LDA-online to LDA-offline and [LDA-sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html#sklearn.discriminant_analysis.LinearDiscriminantAnalysis)
+* *tests_openml_assert.py* comparing the inner structure of LDA-online to LDA-offline and [LDA-sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html#sklearn.discriminant_analysis.LinearDiscriminantAnalysis)
 * *tests_synt.py* comparing performance of LDA-online to LDA-offline and [LDA-sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html#sklearn.discriminant_analysis.LinearDiscriminantAnalysis) using synthetic data 
 
 **Do not forget** to change [shrunk_covariance](https://scikit-learn.org/stable/modules/generated/sklearn.covariance.shrunk_covariance.html), which is used by [LDA-sklearn](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html#sklearn.discriminant_analysis.LinearDiscriminantAnalysis), as follows to get comparative results. 
